@@ -104,17 +104,26 @@ namespace CollectionsMasterConsoleUI
 
         private static void ThreeKiller(int[] numbers)
         {
-            
+            int[] ThreeKiller = new int[3];
         }
 
         private static void OddKiller(List<int> numberList)
         {
-            
+            var OddKiller = new List<int>();
+            for(int i = 0; i < OddKiller.Count; i++)
+            {
+                Console.WriteLine(i);
+            }
         }
 
         private static void NumberChecker(List<int> numberList, int searchNumber)
         {
-            
+            List<int> numbers = new List<int>();
+            foreach(int number in numberList)
+            {
+                Console.WriteLine(number); 
+
+            }
         }
 
         private static void Populater(List<int> numberList)
@@ -127,11 +136,13 @@ namespace CollectionsMasterConsoleUI
         {
             Random rng = new Random();
 
-        }        
+        }
 
         private static void ReverseArray(int[] array)
         {
-            
+            Array.Reverse(array);
+
+
         }
 
         /// <summary>
