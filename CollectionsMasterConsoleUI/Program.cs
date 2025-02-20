@@ -13,17 +13,22 @@ namespace CollectionsMasterConsoleUI
 
             #region Arrays
             //TODO: Create an integer Array of size 50
-            
+            int[] numbers = new int[50];
+            Populater(numbers);
 
             //TODO: Create a method to populate the number array with 50 random numbers that are between 0 and 50
-            
+
 
             //TODO: Print the first number of the array
+            Console.WriteLine(numbers[0]);
 
-            //TODO: Print the last number of the array            
+            //TODO: Print the last number of the array
+
+            //Console.WriteLine(numbers[50]);
 
             Console.WriteLine("All Numbers Original");
             //UNCOMMENT this method to print out your numbers from arrays or lists
+            
             //NumberPrinter();
             Console.WriteLine("-------------------");
 
@@ -41,12 +46,16 @@ namespace CollectionsMasterConsoleUI
 
             //TODO: Create a method that will set numbers that are a multiple of 3 to zero then print to the console all numbers
             Console.WriteLine("Multiple of three = 0: ");
-            
+            ThreeKiller(numbers);
+            NumberPrinter(numbers);
 
             Console.WriteLine("-------------------");
 
             //TODO: Sort the array in order now
             /*      Hint: Array.____()      */
+
+            NumberPrinter(Array.Sort(numbers));
+
             Console.WriteLine("Sorted numbers:");
             
 
@@ -104,16 +113,30 @@ namespace CollectionsMasterConsoleUI
 
         private static void ThreeKiller(int[] numbers)
         {
-            int[] ThreeKiller = new int[3];
+            
+           
+
+           
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] % 3 == 0)
+                {
+                    numbers[i] = 0;
+                }
+            }
+
+            NumberPrinter(numbers);
+            
+
         }
 
         private static void OddKiller(List<int> numberList)
         {
             var OddKiller = new List<int>();
             for(int i = 0; i < OddKiller.Count; i++)
-            {
+           {
                 Console.WriteLine(i);
-            }
+           }
         }
 
         private static void NumberChecker(List<int> numberList, int searchNumber)
@@ -128,13 +151,29 @@ namespace CollectionsMasterConsoleUI
 
         private static void Populater(List<int> numberList)
         {
-            Random rng = new Random();
+           while(numberList.Count < 50)
+            {
+                Random rng = new Random();
+                var number = rng.Next(0, 50);
+                numberList.Add(number);
+            }
+
+            NumberPrinter(numberList);
+            
 
         }
 
         private static void Populater(int[] numbers)
         {
-            Random rng = new Random();
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                Random rng = new Random();
+                numbers[i] = rng.Next(0, 50);
+            }
+
+
+
+            NumberPrinter(numbers);
 
         }
 
